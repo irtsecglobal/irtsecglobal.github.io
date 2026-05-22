@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRT Global – Пентест и аудит ИТ-инфраструктуры</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <svg class="logo-svg" viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>
+            @keyframes glow-pulse {
+              0%, 100% { filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6)); }
+              50% { filter: drop-shadow(0 0 16px rgba(0, 255, 255, 0.9)); }
+            }
+            @keyframes float-letters {
+              0%, 100% { transform: translateY(0px); }
+              50% { transform: translateY(-3px); }
+            }
+            .letter-i { animation: float-letters 3s ease-in-out infinite; }
+            .letter-r { animation: float-letters 3.2s ease-in-out infinite; }
+            .letter-t { animation: float-letters 3.4s ease-in-out infinite; }
+            .letter-g { animation: float-letters 3.6s ease-in-out infinite; }
+          </style>
+        </defs>
+        
+        <!-- IRT letters -->
+        <text class="letter-i" x="20" y="80" font-size="64" font-weight="bold" fill="#00ffff" text-anchor="start">I</text>
+        <text class="letter-r" x="82" y="80" font-size="64" font-weight="bold" fill="#00ffff" text-anchor="start">R</text>
+        <text class="letter-t" x="144" y="80" font-size="64" font-weight="bold" fill="#00ffff" text-anchor="start">T</text>
+        
+        <!-- Separator line -->
+        <line x1="220" y1="18" x2="220" y2="98" stroke="#00ffff" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+        
+        <!-- Global text -->
+        <text class="letter-g" x="255" y="80" font-size="56" font-weight="600" fill="#ffffff" text-anchor="start">Global</text>
+      </svg>
+      <h1>Превентивный аудит веб-архитектуры и ядра. Находим zero-day уязвимости раньше атакующих.</h1>
+      <p class="lead">Экспертный анализ защищенности веб-контура и Kernel-level аудит от ИБ-лаборатории IRT Global. Гарантируем выявление скрытых векторов атак и технологический обход систем класса XDR/WAF до начала реальной компрометации бизнеса.</p>
+      <div class="hero-buttons">
+        <a class="button secondary" href="#contact">Получить бесплатную консультацию</a>
+        <button class="button secondary" id="openEstimateButton" type="button">Оценить стоимость проекта</button>
+      </div>
+      <div class="modal-overlay" id="estimateModal" aria-hidden="true">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="estimateModalTitle">
+          <button class="modal-close" id="closeEstimateModal" type="button">✕</button>
+          <h3 id="estimateModalTitle" style="margin-top: 0; margin-bottom: 14px; font-size: 1.8rem; color: #ffffff;">Стоимость комплексных услуг и проектных решений</h3>
+          <div class="price-box">
+            <ul>
+              <li>
+                <strong>Offensive Security & Threat Emulation (Анализ защищенности)</strong>
+                <p><strong>Классический тест на проникновение (Web & Network Pentest)</strong>: от 450 000 до 1 200 000 ₽</p>
+                <p>Инструментальный и ручной анализ уязвимостей внешнего веб-периметра, оценка устойчивости внутренней сети и поиск векторов для развития атаки.</p>
+              </li>
+              <li>
+                <strong>Аудит безопасности веб-приложений и API (Application Security)</strong>
+                <p>от 600 000 ₽</p>
+                <p>Экспертный анализ логики веб-ресурсов, аудит серверных API (REST/GraphQL), обход систем фильтрации (WAF Bypass) и проверка механизмов авторизации (SAST/DAST).</p>
+              </li>
+              <li>
+                <strong>Технологические операции Red Teaming</strong>
+                <p>от 2 500 000 ₽</p>
+                <p>Длительная скрытая симуляция действий продвинутых APT-группировок без использования социальной инженерии. Фокусируется на компрометации систем через веб-периметр с последующим обходом защитных механизмов XDR/EDR на уровне ядра (Kernel-level bypass).</p>
+                <p>Использование кастомных eBPF-программ, скрытых каналов связи (Covert Channels) и бесфайловых техник (In-memory execution) для работы в инфраструктуре полностью в обход классического логирования и без оставления цифровых следов.</p>
+              </li>
+              <li>
+                <strong>Аудит смарт-контрактов и Web3-протоколов</strong>
+                <p>от 800 000 ₽</p>
+                <p>Верификация логики смарт-контрактов, проверка устойчивости к flash-loan атакам, анализ криптографических примитивов и ZKP.</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <strong>Infrastructure & Cloud Security (Безопасность облаков и системного ПО)</strong>
+                <p><strong>Аудит контейнеризации и облачных сред (DevSecOps)</strong>: от 700 000 ₽</p>
+                <p>Анализ безопасности кластеров Kubernetes/Docker, выявление векторов Container Escape, аудит CI/CD пайплайнов и конфигураций доступа (IAM).</p>
+              </li>
+              <li>
+                <strong>Аудит безопасности системного ПО и Ядра (Kernel Auditing)</strong>
+                <p>от 1 500 000 ₽</p>
+                <p>Анализ драйверов, eBPF-программ, механизмов изоляции гипервизоров (KVM/Xen/QEMU) и устойчивости виртуализированных платформ к zero-day уязвимостям.</p>
+              </li>
+              <li>
+                <strong>Комплексный архитектурный аудит и Compliance</strong>
+                <p>от 900 000 до 2 500 000 ₽</p>
+                <p>Анализ конфигураций облачной и сетевой инфраструктуры, разграничения прав доступа, соответствия ИБ-метрикам и требованиям ФЗ-152, ISO 27001.</p>
+              </li>
+              <li>
+                <strong>Проектирование и внедрение систем ИБ под ключ (SIEM / XDR / DLP)</strong>
+                <p>от 1 800 000 ₽</p>
+                <p>Архитектурное проектирование, развертывание, написание кастомных правил корреляции (SIEM), политик предотвращения утечек и LLM-безопасности.</p>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <strong>Crisis Management & DFIR (Реагирование на инциденты)</strong>
+                <p><strong>Запрос на экстренное реагирование (Incident Response)</strong>: от 350 000 ₽</p>
+                <p>Экстренная локализация активных атак, вытеснение хакеров из веб-контура, блокирование векторов распространения угроз и восстановление работоспособности систем.</p>
+              </li>
+              <li>
+                <strong>Цифровая криминалистика и расследование (Digital Forensics)</strong>
+                <p>от 500 000 ₽</p>
+                <p>Глубокий анализ логов веб-серверов, дампов памяти и баз данных, восстановление хронологии атаки, атрибуция атакующих и подготовка официального технического заключения.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="modal-details">
+            <h4>Регламент инициации проекта и обмена данными</h4>
+            <p>В целях обеспечения кибербезопасности сторон и защиты чувствительной информации, в IRT Global действует строгое категорирование каналов связи:</p>
+            <ul>
+              <li>
+                <strong>Запрос на экстренное реагирование (Incident Response)</strong>
+                <p>При обнаружении признаков компрометации инфраструктуры, активности шифровальщиков или утечки данных направьте сообщение в Telegram с пометкой «INCIDENT». Первичный технический анализ ситуации и обратная связь предоставляются в течение 1 часа в рамках рабочего времени.</p>
+              </li>
+              <li>
+                <strong>Первичная верификация и пре-сейл (Pre-sale)</strong>
+                <p>Для планового согласования объемов работ (Scope), таймингов и технических консультаций используется защищенный корпоративный аккаунт в Telegram.</p>
+              </li>
+              <li>
+                <strong>Передача конфиденциальной документации</strong>
+                <p>Направление технических заданий (ТЗ), опросников, архитектурных схем и исходного кода осуществляется исключительно по каналам шифрованной электронной почты (Secure Email).</p>
+              </li>
+            </ul>
+            <p>🔒 <strong>Правовой статус взаимодействия:</strong> IRT Global гарантирует защиту конфиденциальности на этапе предпроектного обмена данными. Подписание двустороннего соглашения о неразглашении (NDA) является обязательным условием до момента передачи заказчиком любых чувствительных сведений, конфигураций или логов.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="need" class="section light">
+      <div class="container">
+        <h2>Кому и зачем это нужно?</h2>
+        <p>Если вы узнали свою компанию хотя бы в одном пункте — вам нужен пентест:</p>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Релиз и масштабирование цифровых продуктов</h3>
+            <p>При выводе на рынок новых веб-сервисов, мобильных приложений или личных кабинетов. Интеграция ИБ-аудита на этапе запуска гарантирует, что архитектура продукта и конфиденциальные данные пользователей надежно защищены с первого дня.</p>
+          </article>
+          <article class="card">
+            <h3>Защита интеллектуальной собственности и коммерческой тайны</h3>
+            <p>Для компаний, обладающих критически важными цифровыми активами: клиентскими базами, финансовой отчетностью или уникальным исходным кодом. Пентест закрывает каналы утечки информации и предотвращает передачу данных конкурентам.</p>
+          </article>
+          <article class="card">
+            <h3>Соответствие отраслевым стандартам и регуляторным требованиям</h3>
+            <p>Для организаций, проходящих обязательную сертификацию или аудит. Тестирование подтверждает соответствие требованиям законодательства РФ, включая 152-ФЗ «О персональных данных», регламентам ЦБ РФ, стандартам ГОСТ Р 57580 и PCI DSS.</p>
+          </article>
+          <article class="card">
+            <h3>Минимизация внутренних угроз и рисков инсайда</h3>
+            <p>Проверяем устойчивость инфраструктуры к действиям недобросовестных сотрудников или уволенного административного персонала. Моделирование внутренних атак показывает реальный уровень разграничения прав доступа и способность сети противостоять саботажу.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Наши услуги</h2>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Внешнее тестирование на проникновение (External Penetration Testing)</h3>
+            <p>Имитируем действия внешнего нарушителя без первоначальных привилегий. Проводим комплексный анализ доступного из интернета периметра: веб-ресурсов, сетевых служб, корпоративных сервисов и пограничного сетевого оборудования для выявления векторов несанкционированного доступа.</p>
+          </article>
+          <article class="card">
+            <h3>Внутреннее тестирование на проникновение (Internal Penetration Testing)</h3>
+            <p>Оцениваем устойчивость корпоративной сети в сценарии компрометации одной из рабочих станций или действий инсайдера. Анализируем защищенность внутренней ИТ-инфраструктуры, серверов, доменной архитектуры (Active Directory) и разграничение прав доступа.</p>
+          </article>
+          <article class="card">
+            <h3>Анализ защищенности веб- и мобильных приложений (AppSec Audit)</h3>
+            <p>Проводим глубокий аудит безопасности прикладного программного обеспечения. Выявляем критические уязвимости на основе методологий OWASP Top 10 и OWASP MASVS, исследуя логику бизнес-процессов, механизмы аутентификации, авторизации и безопасного хранения данных.</p>
+          </article>
+          <article class="card">
+            <h3>Аудит безопасности и анализ исходного кода (Source Code Security Review)</h3>
+            <p>Проводим экспертный анализ исходного кода программного обеспечения (метод «белого ящика») на наличие архитектурных ошибок, бэкдоров и скрытых уязвимостей. Помогаем разработчикам устранить дефекты безопасности в логике и алгоритмах до релиза продукта.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section light">
+      <div class="container">
+        <h2>Регламент проведения работ и этапы проекта</h2>
+        <div class="grid cards">
+          <article class="card">
+            <h3>1. Юридическое оформление и фиксация границ (NDA)</h3>
+            <p>До начала любых технических работ мы фиксируем жесткие взаимные обязательства сторон. Подписываем соглашение о неразглашении конфиденциальной информации (NDA) и строго регламентируем область исследования. Согласовываем точные границы проекта, целевые IP-адреса и временные окна, что гарантирует полную правовую чистоту, прозрачность и безопасность.</p>
+          </article>
+          <article class="card">
+            <h3>2. Низкоуровневый анализ и профилирование систем</h3>
+            <p>Вместо поверхностного сканирования сети мы проводим глубокий аудит инфраструктуры на уровне ядра и аппаратной архитектуры. С помощью динамической трассировки через eBPF детально анализируем поведение системных вызовов в реальном времени. Исследуем векторные и матричные расширения процессоров на предмет микроархитектурных уязвимостей и утечек по сторонним каналам (Side-Channel).</p>
+          </article>
+          <article class="card">
+            <h3>3. Верификация уязвимостей и моделирование угроз</h3>
+            <p>Наши эксперты вручную валидируют и безопасно эксплуатируют выявленные дефекты для полного исключения ложных срабатываний (False Positives). Мы моделируем реальные сценарии таргетированных кибератак по строгим международным методологиям. Все тесты проводятся без нарушения доступности корпоративных сервисов, целостности баз данных и стабильности систем.</p>
+          </article>
+          <article class="card">
+            <h3>4. Формирование экспертного отчета и дорожной карты</h3>
+            <p>По итогам аудита заказчик получает детализированный аналитический и технический отчет со всей доказательной базой. Документ содержит классификацию обнаруженных уязвимостей по международной шкале CVSS и верифицированные сценарии их реализации (PoC). Мы предоставляем оценку потенциальных бизнес-рисков и пошаговые, приоритезированные рекомендации по их устранению.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise" class="section light">
+      <div class="container">
+        <h2>Наша экспертиза</h2>
+        <div class="expertise-grid">
+          <article class="expertise-item">
+            <h3>1. Web & API Security Research</h3>
+            <p>Подтвержденный опыт в официальных программах Bug Bounty с обнаружением критических уязвимостей (CVSS 9.0+) в веб-инфраструктурах Apple, Microsoft, Google и многих других технологических гигантов. Комплексный анализ безопасности высоконагруженных веб-сервисов, глубокий аудит серверных API (REST/GraphQL), обход систем фильтрации (WAF Bypass), архитектурный патчинг и контроль исправлений.</p>
+          </article>
+          <article class="expertise-item">
+            <h3>2. Kernel Hacking & Systems</h3>
+            <p>Глубокая низкоуровневая разработка под ядро Linux и анализ eBPF JIT internals. Экспертиза в Zero-copy DMA, cache-coherent interconnects, kernel module exploitation и rootkit detection. Внедрение аппаратных механизмов защиты памяти (MTE/PAC) на системном уровне и создание высокопроизводительных bare-metal решений.</p>
+          </article>
+          <article class="expertise-item">
+            <h3>3. Virtualization & Cloud Security</h3>
+            <p>Исследование механизмов изоляции гипервизоров (KVM/Xen/QEMU) и выявление векторов Container Escape. Комплексный аудит безопасности контейнеризации и оркестрации (Kubernetes/Docker), защита CI/CD пайплайнов, конфигураций доступа (IAM) и построение защищенной облачной архитектуры (DevSecOps).</p>
+          </article>
+          <article class="expertise-item">
+            <h3>4. Tech Red Teaming (Operations)</h3>
+            <p>Проектирование комплексных киберопераций, технологическая эмуляция угроз (Threat Emulation) и маппинг по матрице MITRE ATT&CK. Фокус на скрытом обходе систем класса XDR/EDR на уровне ядра (Kernel-level bypass). Использование кастомных eBPF-программ, covert channels и бесфайловых техник (In-memory execution) без оставления цифровых следов и без применения социальной инженерии.</p>
+          </article>
+          <article class="expertise-item">
+            <h3>5. Cryptography & Web3 Auditing</h3>
+            <p>Реализация сложных криптографических архитектур с защитой от атак по сторонним каналам (Side-Channel Analysis). Экспертиза в BoringSSL/OpenSSL internals, интеграция постквантовой криптографии (Kyber/ML-KEM), аудит безопасности смарт-контрактов и протоколов нулевого разглашения (ZKP).</p>
+          </article>
+          <article class="expertise-item">
+            <h3>6. AI & LLM Security Analytics</h3>
+            <p>Применение тензорных разложений и матричных операций для предиктивного обнаружения аномалий в веб-инфраструктуре. Полный аудит безопасности ИИ-решений и LLM-сервисов: тестирование устойчивости к инъекциям команд (Prompt Injection), отравлению обучающих данных (Data Poisoning) и несанкционированному извлечению моделей.</p>
+          </article>
+          <article class="expertise-item tech-keywords">
+            <h3>Core Stack & Technologies</h3>
+            <p>Web Security • API Penetration Testing (REST/GraphQL) • OWASP Top 10 • WAF Bypass • eBPF • Core Hooking • Bare-metal C/Assembly • OpenSSL/BoringSSL Internals • Post-Quantum Cryptography (ML-KEM) • Zero-Knowledge Proofs (ZKP) • MITRE ATT&CK • APT Emulation • Covert Channels • XDR/IDS/IPS Bypass • Kernel-level Bypass • LLM Red Teaming • Hypervisor Security • Container Security (Kubernetes/Docker) • CVSS 9.0+ Research</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust" class="section">
+      <div class="container trust-block">
+        <h2>Почему доверяют IRT Global</h2>
+        <ul>
+          <li><strong>Опыт в Bug Bounty</strong>: Находим критические уязвимости (CVSS 9.0+) там, где автоматические сканеры и классический аудит ничего не видят.</li>
+          <li><strong>Экспертиза системных архитекторов</strong>: Мы не просто запускаем готовые утилиты — мы понимаем работу систем на уровне исходного кода, компиляторов и ядра.</li>
+          <li><strong>Бизнес-ориентированность</strong>: Работаем строго в согласованные окна и с минимальным риском для инфраструктуры. Тесты не нарушают доступность критических бизнес-процессов.</li>
+          <li><strong>Архитектурный патчинг (Remediation)</strong>: Мы не ограничиваемся отчетами. Предоставляем детальные инструкции по устранению уязвимостей, пишем безопасный код для исправления архитектурных ошибок и верифицируем патчи.</li>
+          <li><strong>Абсолютная конфиденциальность</strong>: Работаем по строгим NDA, гарантируем полную анонимность и защиту данных в процессе аудита. Среди наших заказчиков — более 50 крупных российских и международных корпораций.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container">
+      <h2>Готовы защитить компанию?</h2>
+      <p>Свяжитесь с IRT Global для бесплатной консультации и оценки вашего проекта.</p>
+      <div class="contact-methods">
+        <a class="button secondary" href="https://t.me/irtsecglobal" target="_blank" rel="noreferrer" aria-label="Написать в Telegram">Telegram</a>
+        <a class="button secondary" href="mailto:irtsec-global@proton.me" aria-label="Отправить защищённое письмо">Secure Email</a>
+      </div>
+      <p class="footer-note">Все обсуждения конфиденциальны; NDA по запросу.</p>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 IRT Global. Все права защищены. | Информация на сайте носит ознакомительный характер. | <button class="footer-link" id="openLegalLink" type="button">Правовая информация / Дисклеймер</button></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="legalModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="legalModalTitle">
+      <button class="modal-close" id="closeLegalModal" type="button">✕</button>
+      <h3 id="legalModalTitle">Правовая информация и дисклеймер</h3>
+      <ol>
+        <li>Информация, размещенная на сайте IRT Global, предназначена исключительно для ознакомительных целей и демонстрации технической экспертизы в сфере информационной безопасности.</li>
+        <li>Администрация сайта категорически осуждает любые формы несанкционированного доступа к компьютерной информации и сетевой инфраструктуре.</li>
+        <li>Описание технологий, векторов атак и защитных механизмов не является инструкцией к действию. Владелец сайта не несет ответственности за любые прямые или косвенные убытки, возникшие в результате неправомерного использования представленных материалов третьими лицами.</li>
+        <li>Все коммерческие услуги (аудит, тестирование на проникновение, эмуляция угроз) выполняются строго на основании официального B2B-договора и только при наличии письменного согласия владельца целевой инфраструктуры.</li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var openEstimateButton = document.getElementById('openEstimateButton');
+      var estimateModal = document.getElementById('estimateModal');
+      var closeEstimateModal = document.getElementById('closeEstimateModal');
+      var openLegalLink = document.getElementById('openLegalLink');
+      var legalModal = document.getElementById('legalModal');
+      var closeLegalModal = document.getElementById('closeLegalModal');
+
+      openEstimateButton.addEventListener('click', function () {
+        estimateModal.classList.add('active');
+        estimateModal.setAttribute('aria-hidden', 'false');
+        closeEstimateModal.focus();
+      });
+
+      closeEstimateModal.addEventListener('click', function () {
+        estimateModal.classList.remove('active');
+        estimateModal.setAttribute('aria-hidden', 'true');
+        openEstimateButton.focus();
+      });
+
+      estimateModal.addEventListener('click', function (event) {
+        if (event.target === estimateModal) {
+          estimateModal.classList.remove('active');
+          estimateModal.setAttribute('aria-hidden', 'true');
+          openEstimateButton.focus();
+        }
+      });
+
+      openLegalLink.addEventListener('click', function () {
+        legalModal.classList.add('active');
+        legalModal.setAttribute('aria-hidden', 'false');
+        closeLegalModal.focus();
+      });
+
+      closeLegalModal.addEventListener('click', function () {
+        legalModal.classList.remove('active');
+        legalModal.setAttribute('aria-hidden', 'true');
+        openLegalLink.focus();
+      });
+
+      legalModal.addEventListener('click', function (event) {
+        if (event.target === legalModal) {
+          legalModal.classList.remove('active');
+          legalModal.setAttribute('aria-hidden', 'true');
+          openLegalLink.focus();
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          if (estimateModal.classList.contains('active')) {
+            estimateModal.classList.remove('active');
+            estimateModal.setAttribute('aria-hidden', 'true');
+            openEstimateButton.focus();
+          }
+          if (legalModal.classList.contains('active')) {
+            legalModal.classList.remove('active');
+            legalModal.setAttribute('aria-hidden', 'true');
+            openLegalLink.focus();
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
