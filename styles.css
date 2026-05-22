@@ -32,6 +32,39 @@ img {
   color: #fff;
 }
 
+.lang-banner {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  background: rgba(8, 18, 24, 0.95);
+  color: #00ffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.lang-banner.active {
+  border-color: rgba(0, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 255, 255, 0.08);
+}
+
+.lang-banner .lang-label {
+  display: inline-block;
+}
+
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.18em;
